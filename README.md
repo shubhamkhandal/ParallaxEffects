@@ -8,10 +8,11 @@ javascript file
 
 
 <script>
+    
    window.addEventListener('scroll', ()=>{
-       const parallax = document.querySelector('.parallax');
-       let scrollPosition = window.pageYOffset;
-
-       parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px'
+     const parallax = document.querySelector('.parallax');
+         let scrollPosition = window.pageYOffset;
+             parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px'
    });
+   
 </script> 
