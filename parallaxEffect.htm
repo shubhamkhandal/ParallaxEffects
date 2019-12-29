@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parallax Effect</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 1rem;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.head-line{
+    font-family: fantasy;
+    font-size: 5rem;
+    color: rgb(253, 0, 76);
+    line-height: 8rem;
+    letter-spacing: .5rem;
+}
+.head-line::first-letter{
+    font-size: 10rem;
+}
+
+.sub-head-line{
+    font-size: 3rem;
+    font-family: monospace;
+    color: bisque;
+}
+.hero img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.overflow{
+    height: 100vh;
+}
+</style>
+</head>
+<body>
+    <section class="hero">
+        <img src="/1.jpg" alt="img" class="parallax">
+
+        <div class="text-wrapper">
+            <h1 class="head-line">parallax</h1>
+            <h2 class="sub-head-line">scrolling effect</h2>
+        </div>
+    </section>
+
+    <section class="overflow"></section>
+
+<script>
+   window.addEventListener('scroll', ()=>{
+       const parallax = document.querySelector('.parallax');
+       let scrollPosition = window.pageYOffset;
+
+       parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px'
+   });
+</script>    
+</body>
+</html>
